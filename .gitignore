@@ -1,0 +1,7 @@
+node_modules/
+student_name_overrides.json
+assignment_name_mappings.json
+delta_input/
+skedula_output/
+skedula_templates/
+
