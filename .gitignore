@@ -1,8 +1,9 @@
 node_modules/
 student_name_overrides.json
 assignment_name_mappings.json
-delta_input/
-skedula_output/
+delta_input/*
+skedula_output/*
 period_mappings.json
-period_templates/
+period_templates/*
+!period_templates/pdx.csv.sample
 .DS_Store
