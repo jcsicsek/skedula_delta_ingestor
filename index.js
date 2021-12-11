@@ -10,11 +10,11 @@ const parser = new DeltaParser({
   periods: mappings.periods,
 });
 
-const deltaData = parser.parse();
+parser.parse();
+const deltaData = parser.getGrades();
 const generator = new SkedulaGenerator({
   periods: mappings.periods,
 });
-
-const skedulaData = generator.generate();
-console.log(skedulaData);
+generator.generate(deltaData);
+generator.writeFiles();
 
