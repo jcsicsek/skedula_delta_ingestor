@@ -7,8 +7,17 @@ class DeltaParser {
     this.periods = options.periods;
 	}
 	parse() {
-		const gradesWorksheet = this.worksheets[0];
-    return gradesWorksheet.data[1];
+		const studentsRaw = this.worksheets[0].data;
+    const headers = studentsRaw.shift();
+    const students = _.map(studentsRaw, student => {
+      return _.zipObject(headers, student);
+    });
+    const periodGrades = _.transform(this.periods, (result, value, key) => {
+      const periodStudents = _.filter(students, { Period: value });
+      result[key] = periodStudents;
+      return result;
+    })
+    return periodGrades;
 	}
 }
 

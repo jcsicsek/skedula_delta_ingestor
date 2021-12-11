@@ -9,4 +9,5 @@ const parser = new DeltaParser({
   periods: mappings.periods,
 });
 
-console.log(parser.parse());
+const data = parser.parse();
+console.log(data);
